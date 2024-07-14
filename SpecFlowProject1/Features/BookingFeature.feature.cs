@@ -78,20 +78,13 @@ namespace SpecFlowProject1.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute(": CheckBooking")]
-        [NUnit.Framework.CategoryAttribute("mytag")]
         [NUnit.Framework.TestCaseAttribute("Gwesty Seren Hotel", "8,4", null)]
         [NUnit.Framework.TestCaseAttribute("DFT Apartment", "5,2", null)]
         [NUnit.Framework.TestCaseAttribute("Ty Ty TownHouse", "9,0", null)]
         [NUnit.Framework.TestCaseAttribute("La Roulotte au Par", "9,1", null)]
         public virtual void CheckBooking(string hotelName, string rating, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "mytag"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
+            string[] tagsOfScenario = exampleTags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             argumentsOfScenario.Add("HotelName", hotelName);
             argumentsOfScenario.Add("Rating", rating);

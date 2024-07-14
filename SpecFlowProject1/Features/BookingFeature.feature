@@ -2,7 +2,6 @@
 
 Feature: BookingFeature
 
-@mytag
 Scenario Outline:: CheckBooking
 
 	Given Open Page https://www.booking.com/searchresults.en-gb.html
@@ -10,7 +9,6 @@ Scenario Outline:: CheckBooking
 	And   Search the hotel
 	And   Skip the pop-up window
 	Then  Check rating. Expected is <Rating>
-
 
 	Examples:
 	| HotelName		     |  Rating    |
