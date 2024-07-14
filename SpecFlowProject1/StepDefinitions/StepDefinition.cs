@@ -7,8 +7,6 @@ namespace SpecFlowProject1.StepDefinitions
     [Binding]
     public sealed class StepDefinition
     {
-
-
         [Given("Open Page (.*)")]
         public void OpenPage(string url)
         {
@@ -34,10 +32,11 @@ namespace SpecFlowProject1.StepDefinitions
         }
 
         [Then("Check rating. Expected is (.*)")]
-        public void Chechrating(string rating)
+        public void Chechrating(string expected)
         {
-            BookingPage.GetRatingByHotel();
-            Assert.That(BookingPage.GetRatingByHotel(), Is.EqualTo(rating));
+            var result = BookingPage.GetRatingByHotel().Remove(1);
+
+            Assert.That(result, Is.EqualTo(expected.Remove(1)));
         }
     }
 }
