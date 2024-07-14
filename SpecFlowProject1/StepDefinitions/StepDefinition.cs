@@ -15,36 +15,16 @@ namespace SpecFlowProject1.StepDefinitions
             Driver.GoUrl(url);
         }
 
-        [When("Set UserName value (.*)")]
-        public void SetUserName(string vlaue)
-        {
-            LoginPage.SendUserName(vlaue);
-        }
-
-        [When("Set Pass value (.*)")]
-        public void SetPass(string vlaue)
-        {
-            LoginPage.SendPassword(vlaue);
-        }
-
-        [When("Click Login button")]
-        public void ClickLoginButton()
-        {
-            LoginPage.LoginButonClick();
-        }
-
-        [Then("Check url")]
-        public void CheckUrl()
-        {
-            var result = Driver.GetDriver().Url;
-            Assert.IsTrue(result == "https://www.saucedemo.com/inventory.html");
-        }
-
-
         [When("Input hotel name (.*)")]
-        public void inputHotelName(string hotelName)
+        public void InputHotelName(string hotelName)
         {
             BookingPage.InputHotelName(hotelName);
+        }
+
+        [When("Search the hotel")]
+        public void SearchHotel()
+        {
+            BookingPage.SearchHotel();
         }
 
         [When("Skip the pop-up window")]

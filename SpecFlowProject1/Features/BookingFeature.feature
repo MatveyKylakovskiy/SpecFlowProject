@@ -8,7 +8,8 @@ Scenario Outline:: CheckBooking
 
 	Given Open Page https://www.booking.com/searchresults.en-gb.html
 	When Input hotel name <HotelName>
-	When Skip the pop-up window
+	And Search the hotel
+	And Skip the pop-up window
 	Then Check rating. Expected is <Rating>
 
 
